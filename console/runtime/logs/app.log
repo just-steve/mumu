@@ -1,0 +1,295 @@
+2017-10-27 14:30:47 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists' in C:\wamp\www\mumu\vendor\yiisoft\yii2\db\Command.php:842
+Stack trace:
+#0 C:\wamp\www\mumu\vendor\yiisoft\yii2\db\Command.php(842): PDOStatement->execute()
+#1 C:\wamp\www\mumu\vendor\yiisoft\yii2\db\Migration.php(288): yii\db\Command->execute()
+#2 C:\wamp\www\mumu\vendor\dektrium\yii2-user\migrations\m140209_132017_init.php(39): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#3 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(671): m140209_132017_init->up()
+#4 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->migrateUp('m140209_132017_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('up', Array)
+#9 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('up', Array)
+#10 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/up', Array)
+#11 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/up', Array)
+#12 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 C:\wamp\www\mumu\yii(27): yii\base\Application->run()
+#14 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists
+The SQL being executed was: CREATE TABLE `user` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`username` varchar(25) NOT NULL,
+	`email` varchar(255) NOT NULL,
+	`password_hash` varchar(60) NOT NULL,
+	`auth_key` varchar(32) NOT NULL,
+	`confirmation_token` varchar(32) NULL DEFAULT NULL,
+	`confirmation_sent_at` int(11) NULL DEFAULT NULL,
+	`confirmed_at` int(11) NULL DEFAULT NULL,
+	`unconfirmed_email` varchar(255) NULL DEFAULT NULL,
+	`recovery_token` varchar(32) NULL DEFAULT NULL,
+	`recovery_sent_at` int(11) NULL DEFAULT NULL,
+	`blocked_at` int(11) NULL DEFAULT NULL,
+	`registered_from` int(11) NULL DEFAULT NULL,
+	`logged_in_from` int(11) NULL DEFAULT NULL,
+	`logged_in_at` int(11) NULL DEFAULT NULL,
+	`created_at` int(11) NOT NULL,
+	`updated_at` int(11) NOT NULL
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' in C:\wamp\www\mumu\vendor\yiisoft\yii2\db\Schema.php:636
+Stack trace:
+#0 C:\wamp\www\mumu\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'CREATE TABLE `u...')
+#1 C:\wamp\www\mumu\vendor\yiisoft\yii2\db\Migration.php(288): yii\db\Command->execute()
+#2 C:\wamp\www\mumu\vendor\dektrium\yii2-user\migrations\m140209_132017_init.php(39): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#3 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(671): m140209_132017_init->up()
+#4 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->migrateUp('m140209_132017_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('up', Array)
+#9 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('up', Array)
+#10 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/up', Array)
+#11 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/up', Array)
+#12 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 C:\wamp\www\mumu\yii(27): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 42S01
+    [1] => 1050
+    [2] => Table 'user' already exists
+)
+
+2017-10-27 14:30:43 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\ARTSKILLS FILMS\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-OVCJ26O'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\ARTSKILLS FILMS'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jdk1.8.0_91'
+    'LOCALAPPDATA' => 'C:\\Users\\ARTSKILLS FILMS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-OVCJ26O'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\ARTSKILLS FILMS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\wamp\\bin\\php\\php5.6.16;C:\\ProgramData\\ComposerSetup\\bin;C:\\wamp\\bin\\php\\php5.6.25;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;C:\\Program Files\\Git\\cmd;C:\\Users\\ARTSKILLS FILMS\\AppData\\Local\\Temp;C:\\Users\\ARTSKILLS FILMS\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ARTSKILLS FILMS\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 58 Stepping 9, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3a09'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\ARTSKI~2\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\ARTSKI~2\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-OVCJ26O'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-OVCJ26O'
+    'USERNAME' => 'ARTSKILLS FILMS'
+    'USERPROFILE' => 'C:\\Users\\ARTSKILLS FILMS'
+    'windir' => 'C:\\WINDOWS'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1509114643.0411
+    'REQUEST_TIME' => 1509114643
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/up'
+        2 => '--migrationPath=@vendor/dektrium/yii2-user/migrations'
+    ]
+    'argc' => 3
+]
+2017-10-27 14:31:56 [-][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'm160312_050000_create_user' not found' in C:\wamp\www\mumu\vendor\yiisoft\yii2\console\controllers\MigrateController.php:186
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-10-27 14:31:50 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\ARTSKILLS FILMS\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-OVCJ26O'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\ARTSKILLS FILMS'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jdk1.8.0_91'
+    'LOCALAPPDATA' => 'C:\\Users\\ARTSKILLS FILMS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-OVCJ26O'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\ARTSKILLS FILMS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\wamp\\bin\\php\\php5.6.16;C:\\ProgramData\\ComposerSetup\\bin;C:\\wamp\\bin\\php\\php5.6.25;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;C:\\Program Files\\Git\\cmd;C:\\Users\\ARTSKILLS FILMS\\AppData\\Local\\Temp;C:\\Users\\ARTSKILLS FILMS\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ARTSKILLS FILMS\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 58 Stepping 9, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3a09'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\ARTSKI~2\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\ARTSKI~2\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-OVCJ26O'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-OVCJ26O'
+    'USERNAME' => 'ARTSKILLS FILMS'
+    'USERPROFILE' => 'C:\\Users\\ARTSKILLS FILMS'
+    'windir' => 'C:\\WINDOWS'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1509114710.0165
+    'REQUEST_TIME' => 1509114710
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/down'
+    ]
+    'argc' => 2
+]
+2017-10-27 14:32:17 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists' in C:\wamp\www\mumu\vendor\yiisoft\yii2\db\Command.php:842
+Stack trace:
+#0 C:\wamp\www\mumu\vendor\yiisoft\yii2\db\Command.php(842): PDOStatement->execute()
+#1 C:\wamp\www\mumu\vendor\yiisoft\yii2\db\Migration.php(288): yii\db\Command->execute()
+#2 C:\wamp\www\mumu\vendor\dektrium\yii2-user\migrations\m140209_132017_init.php(39): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#3 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(671): m140209_132017_init->up()
+#4 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->migrateUp('m140209_132017_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('up', Array)
+#9 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('up', Array)
+#10 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/up', Array)
+#11 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/up', Array)
+#12 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 C:\wamp\www\mumu\yii(27): yii\base\Application->run()
+#14 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists
+The SQL being executed was: CREATE TABLE `user` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`username` varchar(25) NOT NULL,
+	`email` varchar(255) NOT NULL,
+	`password_hash` varchar(60) NOT NULL,
+	`auth_key` varchar(32) NOT NULL,
+	`confirmation_token` varchar(32) NULL DEFAULT NULL,
+	`confirmation_sent_at` int(11) NULL DEFAULT NULL,
+	`confirmed_at` int(11) NULL DEFAULT NULL,
+	`unconfirmed_email` varchar(255) NULL DEFAULT NULL,
+	`recovery_token` varchar(32) NULL DEFAULT NULL,
+	`recovery_sent_at` int(11) NULL DEFAULT NULL,
+	`blocked_at` int(11) NULL DEFAULT NULL,
+	`registered_from` int(11) NULL DEFAULT NULL,
+	`logged_in_from` int(11) NULL DEFAULT NULL,
+	`logged_in_at` int(11) NULL DEFAULT NULL,
+	`created_at` int(11) NOT NULL,
+	`updated_at` int(11) NOT NULL
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' in C:\wamp\www\mumu\vendor\yiisoft\yii2\db\Schema.php:636
+Stack trace:
+#0 C:\wamp\www\mumu\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'CREATE TABLE `u...')
+#1 C:\wamp\www\mumu\vendor\yiisoft\yii2\db\Migration.php(288): yii\db\Command->execute()
+#2 C:\wamp\www\mumu\vendor\dektrium\yii2-user\migrations\m140209_132017_init.php(39): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#3 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(671): m140209_132017_init->up()
+#4 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->migrateUp('m140209_132017_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('up', Array)
+#9 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('up', Array)
+#10 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/up', Array)
+#11 C:\wamp\www\mumu\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/up', Array)
+#12 C:\wamp\www\mumu\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 C:\wamp\www\mumu\yii(27): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 42S01
+    [1] => 1050
+    [2] => Table 'user' already exists
+)
+
+2017-10-27 14:32:15 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\ARTSKILLS FILMS\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-OVCJ26O'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\ARTSKILLS FILMS'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jdk1.8.0_91'
+    'LOCALAPPDATA' => 'C:\\Users\\ARTSKILLS FILMS\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-OVCJ26O'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\ARTSKILLS FILMS\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\wamp\\bin\\php\\php5.6.16;C:\\ProgramData\\ComposerSetup\\bin;C:\\wamp\\bin\\php\\php5.6.25;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;C:\\Program Files\\Git\\cmd;C:\\Users\\ARTSKILLS FILMS\\AppData\\Local\\Temp;C:\\Users\\ARTSKILLS FILMS\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ARTSKILLS FILMS\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 58 Stepping 9, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3a09'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\ARTSKI~2\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\ARTSKI~2\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-OVCJ26O'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-OVCJ26O'
+    'USERNAME' => 'ARTSKILLS FILMS'
+    'USERPROFILE' => 'C:\\Users\\ARTSKILLS FILMS'
+    'windir' => 'C:\\WINDOWS'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1509114735.8722
+    'REQUEST_TIME' => 1509114735
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/up'
+        2 => '--migrationPath=@vendor/dektrium/yii2-user/migrations'
+    ]
+    'argc' => 3
+]
